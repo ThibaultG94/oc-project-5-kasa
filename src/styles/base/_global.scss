@@ -1,0 +1,22 @@
+// =============================================================
+//  GLOBAL — site-wide background styles
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+body {
+    font-family: $font-main;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-base;
+    color: $color-black;
+    background-color: $color-white;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+// Reusable content container (to be applied to the layout)
+.container {
+    @include container;
+}

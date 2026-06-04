@@ -1,0 +1,28 @@
+// =============================================================
+//  MAIN
+//  Order: abstracts (forwarded) -> database -> components -> pages
+// =============================================================
+
+// Abstracts: available everywhere via @use
+@forward 'abstracts/variables';
+@forward 'abstracts/mixins';
+
+// Base
+@use 'base/reset';
+@use 'base/global';
+
+// Components (to be commented out as needed)
+// @use 'components/header';
+// @use 'components/footer';
+// @use 'components/card';
+// @use 'components/gallery';
+// @use 'components/collapse';
+// @use 'components/carousel';
+// @use 'components/tag';
+// @use 'components/banner';
+
+// Pages (to be commented out as needed)
+// @use 'pages/home';
+// @use 'pages/about';
+// @use 'pages/property';
+// @use 'pages/error';

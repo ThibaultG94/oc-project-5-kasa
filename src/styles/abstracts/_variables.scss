@@ -1,0 +1,62 @@
+// -------------------------------------------------------------
+//  Colors
+// -------------------------------------------------------------
+
+$color-primary: #ff6060; // Red Kasa
+$color-black: #000000; // Footer, main text
+$color-white: #ffffff; // Background, text on a dark background
+$color-background-light: #f6f6f6; // Gallery, dropdown
+$color-text-grey: #666666; // Secondary text (mockup labels)
+
+// Background of the open dropdown menu (translucent gray)
+$color-collapse-bg: rgba(246, 246, 246, 0.45);
+
+// -------------------------------------------------------------
+//  Typography
+// -------------------------------------------------------------
+
+$font-main: 'Montserrat', sans-serif;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+$line-height-base: 1.426;
+
+// Font sizes (desktop)
+$font-size-hero: 48px; // Home Page Header
+$font-size-xl: 24px; // Dropdown titles / nav desktop / footer
+$font-size-lg: 18px; // Card titles, collapsed text
+$font-size-md: 14px; // Tags
+$font-size-sm: 13px; // Mobile dropdown title
+$font-size-xs: 12px; // Mobile text collapse, mobile navigation, mobile footer
+
+// -------------------------------------------------------------
+//  Breakpoints
+// -------------------------------------------------------------
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1024px;
+
+// -------------------------------------------------------------
+//  Spacing
+// -------------------------------------------------------------
+$spacing-xs: 10px;
+$spacing-sm: 15px;
+$spacing-md: 20px;
+$spacing-lg: 26px;
+$spacing-xl: 50px; // gap between sections (home, composants)
+
+// -------------------------------------------------------------
+//  Border-radius
+// -------------------------------------------------------------
+$radius-sm: 5px; // dropdown / collapse
+$radius-md: 10px; // thumbs, tags, mobile carousel
+$radius-lg: 25px; // large containers (gallery, hero, desktop carousel)
+
+// -------------------------------------------------------------
+//  Overall dimensions
+// -------------------------------------------------------------
+$container-width: 1240px; // reference content width (desktop)
+$container-padding: 20px; // mobile side margin
+$header-height: 68px;
+$footer-height: 209px;
