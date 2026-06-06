@@ -15,12 +15,12 @@
 // Components (to be commented out as needed)
 @use 'components/header';
 @use 'components/footer';
-// @use 'components/card';
-// @use 'components/gallery';
+@use 'components/banner';
+@use 'components/card';
+@use 'components/gallery';
 // @use 'components/collapse';
 // @use 'components/carousel';
 // @use 'components/tag';
-// @use 'components/banner';
 
 // Pages (to be commented out as needed)
 // @use 'pages/home';

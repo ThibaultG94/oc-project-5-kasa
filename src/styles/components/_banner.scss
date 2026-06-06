@@ -1,0 +1,63 @@
+// =============================================================
+//  BANNER — hero image + title (homepage)
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.banner {
+    position: relative;
+    height: 223px;
+    border-radius: $radius-lg;
+    overflow: hidden;
+
+    // Dark overlay
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: $color-black;
+        opacity: 0.6;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        @include flex(row, center, center);
+        padding-inline: $spacing-xl;
+        color: $color-white;
+        font-size: $font-size-hero;
+        font-weight: $font-weight-bold;
+        text-align: center;
+        text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    &__break {
+        display: none;
+    }
+
+    // -------------------------------------------------------------
+    //  Mobile
+    // -------------------------------------------------------------
+    @include mobile {
+        height: 111px;
+        border-radius: $radius-md;
+
+        &__title {
+            justify-content: flex-start;
+            padding-inline: $spacing-sm;
+            text-align: left;
+            font-size: $font-size-xl;
+        }
+
+        &__break {
+            display: inline;
+        }
+    }
+}
