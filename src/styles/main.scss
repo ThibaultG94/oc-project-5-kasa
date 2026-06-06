@@ -10,10 +10,11 @@
 // Base
 @use 'base/reset';
 @use 'base/global';
+@use 'base/layout';
 
 // Components (to be commented out as needed)
-// @use 'components/header';
-// @use 'components/footer';
+@use 'components/header';
+@use 'components/footer';
 // @use 'components/card';
 // @use 'components/gallery';
 // @use 'components/collapse';

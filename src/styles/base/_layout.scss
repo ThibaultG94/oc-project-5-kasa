@@ -1,0 +1,20 @@
+// =============================================================
+//  LAYOUT — overall page structure (header / content / footer)
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.layout {
+    // Sticky footer: the content stretches to push the footer down
+    // on short pages, so header/footer frame every route consistently
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__content {
+        flex: 1;
+        @include container;
+        padding-top: $spacing-xl;
+        padding-bottom: $spacing-xl;
+    }
+}

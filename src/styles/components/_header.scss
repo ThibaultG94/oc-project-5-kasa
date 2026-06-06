@@ -1,0 +1,53 @@
+// =============================================================
+//  HEADER
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+    @include container;
+    @include flex(row, space-between, center);
+    height: $header-height;
+    margin-top: $spacing-md;
+
+    &__logo {
+        width: 145px;
+        height: auto;
+    }
+
+    &__nav {
+        @include flex(row, flex-end, center, 57px);
+    }
+
+    &__link {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-medium;
+        color: $color-black;
+        text-decoration: none;
+
+        // react-router adds the `active` class on the matching route
+        &.active {
+            text-decoration: underline;
+        }
+    }
+
+    // -------------------------------------------------------------
+    //  Mobile
+    // -------------------------------------------------------------
+    @include mobile {
+        margin-top: $spacing-xs;
+
+        &__logo {
+            width: 100px;
+        }
+
+        &__nav {
+            gap: $spacing-lg;
+        }
+
+        &__link {
+            font-size: $font-size-xs;
+            text-transform: uppercase;
+        }
+    }
+}
