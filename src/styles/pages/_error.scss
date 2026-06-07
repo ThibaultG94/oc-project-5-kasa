@@ -1,0 +1,65 @@
+// =============================================================
+//  ERROR PAGE — 404
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+$error-gap: 139px;
+$error-gap-mobile: 113px;
+
+.error {
+    @include flex(column, flex-start, center);
+    gap: $error-gap;
+    padding-top: $error-gap - $spacing-xl;
+    padding-bottom: $error-gap - $spacing-xl;
+    text-align: center;
+
+    &__code {
+        color: $color-primary;
+        font-size: 288px;
+        font-weight: $font-weight-bold;
+        line-height: 1;
+    }
+
+    &__message {
+        color: $color-primary;
+        font-size: 36px;
+        font-weight: $font-weight-medium;
+    }
+
+    &__break {
+        display: none;
+    }
+
+    &__link {
+        color: $color-black;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-medium;
+        text-decoration: underline;
+    }
+
+    // -------------------------------------------------------------
+    //  Mobile
+    // -------------------------------------------------------------
+    @include mobile {
+        gap: $error-gap-mobile;
+        padding-top: $error-gap-mobile - $spacing-xl;
+        padding-bottom: $error-gap-mobile - $spacing-xl;
+
+        &__code {
+            font-size: 96px;
+        }
+
+        &__message {
+            font-size: $font-size-lg;
+        }
+
+        &__break {
+            display: inline;
+        }
+
+        &__link {
+            font-size: $font-size-md;
+        }
+    }
+}
