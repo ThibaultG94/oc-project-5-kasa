@@ -1,11 +1,8 @@
-function Banner() {
+function Banner({ image, alt = "", title }) {
   return (
     <section className="banner">
-      <img src="/banner-home.webp" alt="" className="banner__image" />
-      <h1 className="banner__title">
-        Chez vous, <br className="banner__break" />
-        partout et ailleurs
-      </h1>
+      <img src={image} alt={alt} className="banner__image" />
+      {title && <h1 className="banner__title">{title}</h1>}
     </section>
   );
 }

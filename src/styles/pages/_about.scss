@@ -1,0 +1,15 @@
+// =============================================================
+//  ABOUT PAGE — values section (stacked collapses)
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.about {
+    @include flex(column, flex-start, stretch, 30px);
+    margin-top: $spacing-xl;
+
+    @include mobile {
+        gap: $spacing-md; // 20px on mobile
+        margin-top: $spacing-md;
+    }
+}

@@ -1,0 +1,110 @@
+// =============================================================
+//  COLLAPSE — clickable title bar + collapsible content
+//  Reused on the About page and the housing detail pages.
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+$collapse-transition: 0.3s ease;
+$collapse-bar-height: 47px;
+$collapse-bar-height-mobile: 30px;
+
+.collapse {
+    position: relative;
+
+    // Title bar sits above the panel (absolute), so its height stays
+    // constant while the panel animates.
+    &__header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        min-height: $collapse-bar-height;
+        @include flex(row, space-between, center);
+        padding: $spacing-xs $spacing-sm;
+        background-color: $color-primary;
+        color: $color-white;
+        border-radius: $radius-sm;
+    }
+
+    &__title {
+        font-size: $font-size-xl;
+        font-weight: $font-weight-bold;
+        text-align: left;
+    }
+
+    &__arrow {
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        transition: transform $collapse-transition;
+    }
+
+    // Height animated via grid-template-rows 0fr -> 1fr.
+    // padding-top reserves room for the bar layered on top.
+    &__panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        padding-top: $collapse-bar-height;
+        background-color: $color-collapse-bg;
+        border-radius: $radius-sm;
+        transition: grid-template-rows $collapse-transition;
+    }
+
+    // hidden overflow let the 0fr row collapse fully.
+    &__content {
+        overflow: hidden;
+        padding-inline: $spacing-md;
+        color: $color-black;
+        font-size: $font-size-lg;
+
+        // Inner text fade + slide so it tracks the panel opening
+        // instead of popping in at the end. padding is animated too,
+        // otherwise it snaps to 0 instantly on close
+        opacity: 0;
+        transform: translateY(-8px);
+        transition: opacity $collapse-transition, transform $collapse-transition,
+            padding-block $collapse-transition;
+    }
+
+    &--open {
+        .collapse__panel {
+            grid-template-rows: 1fr;
+        }
+
+        .collapse__content {
+            padding-block: $spacing-md;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .collapse__arrow {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @include mobile {
+        &__header {
+            min-height: $collapse-bar-height-mobile;
+            padding: 0 $spacing-xs;
+        }
+
+        &__title {
+            font-size: $font-size-sm;
+        }
+
+        &__panel {
+            padding-top: $collapse-bar-height-mobile;
+        }
+
+        &__content {
+            padding-inline: $spacing-xs;
+            font-size: $font-size-xs;
+        }
+
+        &--open .collapse__content {
+            padding-block: $spacing-xs;
+        }
+    }
+}

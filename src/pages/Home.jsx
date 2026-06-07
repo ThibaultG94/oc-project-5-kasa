@@ -1,11 +1,20 @@
 import Banner from "../components/Banner";
-import Card from "../components/Card/Card";
+import Card from "../components/Card";
 import listings from "../data/data.json";
 
 function Home() {
   return (
     <>
-      <Banner />
+      <Banner
+        image="/banner-home.webp"
+        alt=""
+        title={
+          <>
+            Chez vous, <br className="banner__break" />
+            partout et ailleurs
+          </>
+        }
+      />
       <section className="gallery" aria-label="Liste des logements">
         {listings.map((listing) => (
           <Card
