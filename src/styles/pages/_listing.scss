@@ -1,0 +1,163 @@
+// =============================================================
+//  LISTING PAGE
+// =============================================================
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.listing {
+    @include flex(column, flex-start, stretch, $spacing-lg);
+    margin-top: $spacing-md;
+
+    &__header {
+        @include flex(row, space-between, flex-start);
+        gap: $spacing-md;
+    }
+
+    &__heading {
+        @include flex(column, flex-start, flex-start, $spacing-xs);
+    }
+
+    &__title {
+        color: $color-primary;
+        font-size: 36px;
+        font-weight: $font-weight-medium;
+    }
+
+    &__location {
+        color: $color-black;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-medium;
+    }
+
+    // -------------------------------------------------------------
+    //  Tags
+    // -------------------------------------------------------------
+    &__tags {
+        @include flex(row, flex-start, center, $spacing-xs);
+        flex-wrap: wrap;
+        margin-top: $spacing-xs;
+    }
+
+    // -------------------------------------------------------------
+    //  Aside : host + rating
+    // -------------------------------------------------------------
+    &__aside {
+        @include flex(column, flex-start, flex-end, $spacing-md);
+        flex-shrink: 0;
+    }
+
+    &__host {
+        @include flex(row, flex-end, center, $spacing-xs);
+    }
+
+    &__host-name {
+        color: $color-primary;
+        font-size: $font-size-lg;
+        font-weight: $font-weight-medium;
+        text-align: right;
+    }
+
+    &__host-picture {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    &__details {
+        @include flex(row, space-between, flex-start, 76px);
+
+        >.collapse {
+            flex: 1;
+        }
+    }
+
+    &__equipments {
+        @include flex(column, flex-start, flex-start, $spacing-xs);
+    }
+
+    // -------------------------------------------------------------
+    //  Mobile
+    // -------------------------------------------------------------
+    @include mobile {
+        gap: $spacing-md;
+
+        &__details {
+            flex-direction: column;
+            gap: $spacing-md;
+        }
+
+        &__header {
+            flex-direction: column;
+            gap: $spacing-sm;
+        }
+
+        &__title {
+            font-size: $font-size-lg;
+        }
+
+        &__location {
+            font-size: $font-size-md;
+        }
+
+        &__aside {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        &__host-name {
+            font-size: $font-size-xs;
+        }
+
+        &__host-picture {
+            width: 32px;
+            height: 32px;
+        }
+    }
+}
+
+// =============================================================
+//  TAG
+// =============================================================
+.tag {
+    @include flex(row, center, center);
+    height: 25px;
+    padding-inline: $spacing-md;
+    background-color: $color-primary;
+    color: $color-white;
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-md;
+
+    @include mobile {
+        height: 18px;
+        padding-inline: $spacing-xs;
+        font-size: 10px;
+    }
+}
+
+// =============================================================
+//  RATING
+// =============================================================
+.rating {
+    @include flex(row, flex-end, center);
+
+    &__star {
+        width: 36px;
+        height: 36px;
+        color: $color-background-light;
+
+        &--active {
+            color: $color-primary;
+        }
+    }
+
+    @include mobile {
+        .rating__star {
+            width: 18px;
+            height: 18px;
+        }
+    }
+}

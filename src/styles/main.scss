@@ -18,11 +18,11 @@
 @use 'components/banner';
 @use 'components/card';
 @use 'components/collapse';
-// @use 'components/carousel';
+@use 'components/slideshow';
 // @use 'components/tag';
 
 // Pages (to be commented out as needed)
 @use 'pages/home';
 @use 'pages/about';
-// @use 'pages/property';
+@use 'pages/listing';
 @use 'pages/error';
