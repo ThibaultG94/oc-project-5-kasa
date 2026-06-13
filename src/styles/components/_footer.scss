@@ -5,19 +5,21 @@
 @use '../abstracts/mixins' as *;
 
 .footer {
-    @include flex(column, center, center);
-    height: $footer-height; // 209px — hauteur fixe de la maquette
+    @include flex(column, flex-start, center);
+    height: $footer-height;
+    padding-top: 66px;
+    padding-bottom: 29px;
     background-color: $color-black;
     color: $color-white;
 
     &__logo {
         width: 122px;
         height: auto;
-        margin-bottom: $spacing-lg; // ~26px : écart logo -> copyright (maquette)
+        margin-bottom: $spacing-lg;
     }
 
     &__copyright {
-        font-size: $font-size-xl; // 24px
+        font-size: $font-size-xl;
         font-weight: $font-weight-medium;
         text-align: center;
     }
@@ -27,11 +29,12 @@
     // -------------------------------------------------------------
     @include mobile {
         height: auto;
-        padding-block: $spacing-xl;
+        padding-top: 66px;
+        padding-bottom: 58px;
 
         &__copyright {
             max-width: 240px;
-            font-size: $font-size-xs; // 12px
+            font-size: $font-size-xs;
         }
     }
 }
