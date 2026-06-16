@@ -1,5 +1,5 @@
 // =============================================================
-//  SLIDESHOW — image carousel (property listing)
+//  SLIDESHOW — image carousel
 // =============================================================
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
@@ -71,7 +71,6 @@
         }
 
         &__counter {
-            // masquée sur la maquette mobile
             display: none;
         }
     }

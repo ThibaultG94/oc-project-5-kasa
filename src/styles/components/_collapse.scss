@@ -1,6 +1,6 @@
 // =============================================================
 //  COLLAPSE — clickable title bar + collapsible content
-//  Reused on the About page and the listing detail pages.
+//  Reused on the About page and the listing detail pages
 // =============================================================
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
@@ -12,8 +12,6 @@ $collapse-bar-height-mobile: 30px;
 .collapse {
     position: relative;
 
-    // Title bar sits above the panel (absolute), so its height stays
-    // constant while the panel animates.
     &__header {
         position: absolute;
         top: 0;
@@ -41,8 +39,7 @@ $collapse-bar-height-mobile: 30px;
         transition: transform $collapse-transition;
     }
 
-    // Height animated via grid-template-rows 0fr -> 1fr.
-    // padding-top reserves room for the bar layered on top.
+    // Height animated via grid-template-rows 0fr -> 1fr
     &__panel {
         display: grid;
         grid-template-rows: 0fr;
@@ -52,7 +49,7 @@ $collapse-bar-height-mobile: 30px;
         transition: grid-template-rows $collapse-transition;
     }
 
-    // hidden overflow let the 0fr row collapse fully.
+    // hidden overflow let the 0fr row collapse fully
     &__content {
         overflow: hidden;
         padding-inline: $spacing-md;

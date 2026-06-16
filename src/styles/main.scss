@@ -1,6 +1,5 @@
 // =============================================================
 //  MAIN
-//  Order: abstracts (forwarded) -> database -> components -> pages
 // =============================================================
 
 // Abstracts: available everywhere via @use
@@ -12,16 +11,15 @@
 @use 'base/global';
 @use 'base/layout';
 
-// Components (to be commented out as needed)
+// Components
 @use 'components/header';
 @use 'components/footer';
 @use 'components/banner';
 @use 'components/card';
 @use 'components/collapse';
 @use 'components/slideshow';
-// @use 'components/tag';
 
-// Pages (to be commented out as needed)
+// Pages
 @use 'pages/home';
 @use 'pages/about';
 @use 'pages/listing';

@@ -1,5 +1,5 @@
 // =============================================================
-//  GLOBAL — site-wide background styles
+//  GLOBAL
 // =============================================================
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
 }
 
-// Reusable content container (to be applied to the layout)
+// Reusable content container
 .container {
     @include container;
 }

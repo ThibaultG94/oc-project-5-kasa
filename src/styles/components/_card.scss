@@ -1,5 +1,5 @@
 // =============================================================
-//  CARD — listings thumbnail (homepage gallery)
+//  CARD
 // =============================================================
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as *;
@@ -11,7 +11,6 @@
     border-radius: $radius-md; // 10px
     overflow: hidden;
 
-    // Darker shade at the bottom for better readability of the title (see mockup)
     &::after {
         content: '';
         position: absolute;

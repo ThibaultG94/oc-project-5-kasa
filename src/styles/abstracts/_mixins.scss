@@ -5,8 +5,6 @@
 
 // -------------------------------------------------------------
 //  Responsive
-//  Mobile-first is not enforced here: we're sticking with `max-width`
-//  to align with the "desktop-first" approach of the mockup.
 // -------------------------------------------------------------
 @mixin mobile {
     @media (max-width: $breakpoint-mobile) {
